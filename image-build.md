@@ -32,7 +32,7 @@ docker commit -m "create" -a "captain" container-id test/image:tag
 
 ```sh
 #Version 1.0.1
-FROM centos:latest
+FROM centos:7
 
 #设置root用户为后续命令的执行者
 USER root
