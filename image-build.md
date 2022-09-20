@@ -28,7 +28,7 @@ docker commit -m "create" -a "captain" container-id test/image:tag
 6. 执行docker images可以查看到制作完成的容器镜像。
 
 ## Dockerfile方式构建
-将方法一制作镜像的方法，用文件方式写出来（文件名为Dockerfile）。然后执行：docker build -t test/image:tag. 命令（命令中“.”表示Dockerfile文件的路径），自动完成镜像制作。
+将方法一制作镜像的方法，用文件方式写出来（文件名为Dockerfile）。然后执行：docker build -t test/image:tag . 命令（命令中“.”表示Dockerfile文件的路径），自动完成镜像制作。
 
 ```sh
 #Version 1.0.1
