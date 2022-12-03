@@ -7,7 +7,10 @@
 
 1. 安装容器引擎软件Docker
 2. 启动一个空白的基础容器，并进入容器。
-   例如启动一个CentOS的容器：docker run -it centos
+```
+# 例如启动一个CentOS的容器：
+docker run -it centos
+```
 3. 执行安装任务。
 ```sh
 yum install XXX
