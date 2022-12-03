@@ -13,8 +13,11 @@ docker run -it centos:7 /bin/bash
 ```
 3. 执行安装任务
 ```sh
-# 例如我们要按照nodejs
-yum install nodejs
+yum update -y
+yum clean all
+# 例如我们要安装nodejs、npm、git
+yum install epel-release
+yum install nodejs npm git
 ```
 4. 输入exit退出容器。
 5. 制作镜像。
@@ -38,7 +41,7 @@ FROM centos:7
 USER root
 
 #执行操作
-RUN yum update -y
+RUN yum update -y && yum clean all
 RUN yum install -y nodejs
 
 #使用&&拼接命令
@@ -135,3 +138,29 @@ ONBUILD：
 使用FROM以这个Dockerfile构建出的镜像为父镜像，构建子镜像时：
 
 ONBUILD ADD . /app/src：自动执行ADD . /app/src
+
+
+# 上传镜像到远程Hub
+
+## 将本地镜像重新做tag上传
+- 查看本地镜像
+```sh
+docker images
+```
+- 登录Hub
+```sh
+docker login
+```
+- 按hub要求生成tag
+```sh
+docker tag <imageID> <namespace>/<image name>:<version tag eg:latest>
+```
+- 上传镜像
+```sh
+docker push <namespace>/<image name>:<version tag>
+```
+
+# 从远程Hub拉取镜像
+```sh
+docker pull <namespace>/<image name>:<version tag>
+```
