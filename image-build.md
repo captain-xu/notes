@@ -140,9 +140,8 @@ ONBUILD：
 ONBUILD ADD . /app/src：自动执行ADD . /app/src
 
 
-# 上传镜像到远程Hub
+# 上传本地镜像到远程Hub
 
-## 将本地镜像重新做tag上传
 - 查看本地镜像
 ```sh
 docker images
