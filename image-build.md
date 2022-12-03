@@ -7,17 +7,14 @@
 
 1. 安装容器引擎软件Docker
 2. 启动一个空白的基础容器，并进入容器。
-```
-# 例如启动一个CentOS的容器：
-docker run -it centos
-```
-3. 执行安装任务。
 ```sh
-yum install XXX
-
-git clone https://github.com/xxx.git
-
-cd bwa;make
+# 例如启动一个CentOS的容器：
+docker run -it centos:7 /bin/bash
+```
+3. 执行安装任务
+```sh
+# 例如我们要按照nodejs
+yum install nodejs
 ```
 4. 输入exit退出容器。
 5. 制作镜像。
@@ -42,7 +39,7 @@ USER root
 
 #执行操作
 RUN yum update -y
-RUN yum install -y java
+RUN yum install -y nodejs
 
 #使用&&拼接命令
 RUN touch test.txt && echo "abc" >>abc.txt
