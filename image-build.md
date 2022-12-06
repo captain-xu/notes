@@ -152,14 +152,14 @@ docker login
 ```
 - 按hub要求生成tag
 ```sh
-docker tag <imageID> <namespace>/<image name>:<version tag eg:latest>
+docker tag <imageID> <namespace>/<image name>:<tag eg:latest>
 ```
 - 上传镜像
 ```sh
-docker push <namespace>/<image name>:<version tag>
+docker push <namespace>/<image name>:<tag>
 ```
 
 # 从远程Hub拉取镜像
 ```sh
-docker pull <namespace>/<image name>:<version tag>
+docker pull <namespace>/<image name>:<tag>
 ```
